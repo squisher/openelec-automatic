@@ -26,13 +26,14 @@ ADDON_DIR="$HOME/.xbmc/addons/service.transmission.automatic"
 ADDON_HOME="$HOME/.xbmc/userdata/addon_data/service.transmission.automatic"
 ADDON_BIN="automatic"
 
+mkdir -p $ADDON_HOME
+
 if [ ! -f "$ADDON_HOME/automatic.conf" ]; then
   cat $ADDON_DIR/automatic.conf.sample | sed "s,~/.config,$ADDON_HOME," > $ADDON_HOME/automatic.conf
 fi
 
 ADDON_ARG="-v 3 -l $ADDON_HOME/auto.log -c $ADDON_HOME/automatic.conf"
 
-mkdir -p $ADDON_HOME
-  if [ ! "$(pidof $ADDON_BIN)" ]; then
-      $ADDON_BIN $ADDON_ARG
-  fi
+if [ ! "$(pidof $ADDON_BIN)" ]; then
+    $ADDON_BIN $ADDON_ARG
+fi
