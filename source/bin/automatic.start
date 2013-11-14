@@ -22,9 +22,6 @@
 
 . /etc/profile
 
-#LOCKDIR="/var/lock/"
-#LOCKFILE="automatic.disabled"
-
 ADDON_DIR="$HOME/.xbmc/addons/service.transmission.automatic"
 ADDON_HOME="$HOME/.xbmc/userdata/addon_data/service.transmission.automatic"
 ADDON_BIN="automatic"
@@ -33,19 +30,9 @@ if [ ! -f "$ADDON_HOME/automatic.conf" ]; then
   cat $ADDON_DIR/automatic.conf.sample | sed "s,~/.config,$ADDON_HOME," > $ADDON_HOME/automatic.conf
 fi
 
-ADDON_ARG="-v 5 -l $ADDON_HOME/auto.log -c $ADDON_HOME/automatic.conf"
+ADDON_ARG="-v 3 -l $ADDON_HOME/auto.log -c $ADDON_HOME/automatic.conf"
 
 mkdir -p $ADDON_HOME
   if [ ! "$(pidof $ADDON_BIN)" ]; then
-#    if [ -f "$LOCKDIR/$LOCKFILE" ] ; then
-#      rm -rf "$LOCKDIR/$LOCKFILE"
-#    fi
-#
-#    while [ true ] ; do
-#      if [ -f "$LOCKDIR/$LOCKFILE" ] ; then
-#        break
-#      fi
-      $ADDON_BIN $ADDON_ARG # &
-#      sleep 1
-#    done &
+      $ADDON_BIN $ADDON_ARG
   fi
