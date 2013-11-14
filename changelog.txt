@@ -1,0 +1,10 @@
+YOU MUST EDIT automatic.conf BY HAND.
+THERE IS NO GUI, SORRY.
+
+The file is in ~/.xbmc/userdata/addon_data/service.transmission.automatic
+
+Afterwards disable and then enable the add-on to use the new configuration.
+
+0.7.2
+* Initial packaging of 0.7.2
+* Based on work by vpeter4
