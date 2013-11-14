@@ -25,4 +25,4 @@
 mkdir -p $ADDON_BUILD/$PKG_ADDON_ID/bin
   cp $PKG_BUILD/src/automatic $ADDON_BUILD/$PKG_ADDON_ID/bin/
 
-cp $DIR/config/automatic.conf.sample $ADDON_BUILD/$PKG_ADDON_ID
+cp $DIR/COPYING.txt $DIR/config/automatic.conf.sample $ADDON_BUILD/$PKG_ADDON_ID
